@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="login-wrapper">
+  <div class="login-container">
+    <div class="logo">Plotless</div>
+    <div class="desc">savage, no-BS movie ratings.</div>
+  </div>
+  <div class="login-form">
+    <div class="form-group">
+      <label for="uname">Username</label>
+      <input
+        type="text"
+        name="uname"
+        id="uname"
+        [value]="username()"
+        (input)="username.set($event.target.value)"
+      />
+      <label for="pword">Password</label>
+      <input
+        type="password"
+        name="pword"
+        id="pword"
+        [value]="password()"
+        (input)="password.set($event.target.value)"
+      />
+      <div class="btn-container">
+        <div class="error">{{ errorMsg }}</div>
+        <button (click)="login()" type="submit">Log In</button>
+      </div>
+    </div>
+  </div>
+</div>
