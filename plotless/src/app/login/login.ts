@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import {Authservice} from '../services/auth.service';
+import {Auth} from '../services/auth';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class Login {
   password = signal('');
   errorMsg = '';
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: Auth, private router: Router) {}
   
   login() {
     if (this.username().trim().length === 0) {
